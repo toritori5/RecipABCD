@@ -116,11 +116,11 @@ awk 'NR==FNR {a[$1]=$2;next} {
        print a[b[1]] "\t" b[2], $2;
    else
        print "nada";
- }' $f listahhal > $f.nuevo
+ }' $f listB > $f.nuevo
 done
 done
 
-paste listahhal tmp/B_C_recip.nuevo tmp/B_D_recip.nuevo | grep -v 'nada' > tmp/B@C@D
+paste listB tmp/B_C_recip.nuevo tmp/B_D_recip.nuevo | grep -v 'nada' > tmp/B@C@D
 sed 's/\t+/\t/g' tmp/B@C@D > results/B_C_D
 
 a234=$(wc -l results/B_C_D | cut -f1 -d ' ')
